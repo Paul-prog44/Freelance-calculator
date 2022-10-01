@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de gain en freelance</title>
+    <link rel="stylesheet" type="text/CSS" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Calculateur de gain pour Freelance</h1>
+    </header>
+    <main>
+        <form>
+            <fieldset class="fieldsets">
+                <legend>Vos tarifs</legend>
+
+                <div class="container">
+                    <label>Taux horaire :</label>
+                    <div>
+                        <input type="number" id="hourlyRate" placeholder="Ex : 50">
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <label>Taux journalier :</label>
+                    <div>
+                        <input type="number" id="dailyRate" placeholder="Ex : 400">
+                    </div>
+                </div>
+
+                <div class="container">
+                    <label>Extras :</label>
+                    <div>
+                        <input type="number" id="extrasRate" placeholder="Ex : 200">
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset class="fieldsets">
+                <legend>Quantités</legend>
+
+                <div class="container">
+                    <label> Nombre d'heure :</label>
+                    <div>
+                        <input type="number" id="hourlyRate" placeholder="Ex : 151">
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <label>Nombre de jours :</label>
+                    <div>
+                        <input type="number" id="hourlyRate" placeholder="Ex : 10">
+                    </div>
+                </div>
+                
+                <div class="container">
+                <label>Nombre d'extra :</label>
+                <div>
+                    <input type="number" id="hourlyRate" placeholder="EX :5">
+                </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldsets">
+                <legend>Charges</legend>
+
+                <div class="container">
+                    <div>
+                        <label for="taxes">Votre taux de TVA :</label>
+                            <select id="taxes" name="taxes">
+                            <option value="0">0 %</option>
+                            <option value="5.5">5,5 %</option>
+                            <option value="10">10 % </option>
+                            <option value="20">20 %</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <button>Calculer</button>
+            <input type="reset" id="reset">
+            <fieldset class="fieldsets">
+                <legend>Résultats</legend>
+                
+                <div class="container">
+                    <p>Brut</p>
+                    <div class="results">
+                        <p id="totalGross">0 €</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <p>Taxes</p>
+                    <div class="results">
+                        <p id="totalTaxes">0 €</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <p>Net</p>
+                    <div class="results">
+                        <p id="totalNet">0 €</p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

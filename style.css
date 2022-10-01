@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    background-image: url(./img/calculator_background.jpg);
+    background-position: center;
+    font-family:cursive;
+}
+header {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+}
+
+.fieldsets {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(5, 128, 150);
+    background-color: rgba(5, 128, 150, 30%);
+}
+
+form {
+    max-width: 50%;
+    margin: auto;    
+}
+
+button, #reset {
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(5, 128, 150);
+    background-color: rgb(5, 128, 150);
+    color: azure;
+}
+
+input[type='number']{
+    width: 100px;
+    padding: 10px;
+} 
+
+.results {
+    padding: 10px;
+    border: 1px rgb(5, 128, 150) solid;
+    border-radius: 10px;
+    background-color: rgba(5, 128, 150, 70%);
+}
