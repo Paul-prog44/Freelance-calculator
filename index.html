@@ -15,7 +15,7 @@
         <h1>Calculateur de gain pour Freelance</h1>
     </header>
     <main>
-        <form>
+        <form id="form">
             <fieldset class="fieldsets">
                 <legend>Vos tarifs</legend>
 
@@ -47,21 +47,21 @@
                 <div class="container">
                     <label> Nombre d'heure :</label>
                     <div>
-                        <input type="number" id="hourlyRate" placeholder="Ex : 151">
+                        <input type="number" id="hourQty" placeholder="Ex : 151">
                     </div>
                 </div>
                 
                 <div class="container">
                     <label>Nombre de jours :</label>
                     <div>
-                        <input type="number" id="hourlyRate" placeholder="Ex : 10">
+                        <input type="number" id="dayQty" placeholder="Ex : 10">
                     </div>
                 </div>
                 
                 <div class="container">
                 <label>Nombre d'extra :</label>
                 <div>
-                    <input type="number" id="hourlyRate" placeholder="EX :5">
+                    <input type="number" id="ExtraQty" placeholder="EX :5">
                 </div>
                 </div>
             </fieldset>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </fieldset>
-            <button>Calculer</button>
+            <button id="calculate">Calculer</button>
             <input type="reset" id="reset">
             <fieldset class="fieldsets">
                 <legend>Résultats</legend>
