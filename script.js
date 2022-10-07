@@ -15,43 +15,47 @@ const totalGross = document.getElementById("totalGross")
 const totalTaxes = document.getElementById("totalTaxes")
 const totalNet = document.getElementById("totalNet")
 
-//Bouton calculer
-document
-    .getElementById("calculate")
-    .addEventListener("click", totalResults)
-    
-//Calcul du brut    
-function totalGrossResultFct() {
-    totalGrossResult=((hourlyRate.value*hourQty.value) + (dailyRate.value*dayQty.value)+ (extrasRate.value*ExtraQty.value))
-    totalGross.innerHTML=(totalGrossResult.toFixed(2))+"€"
-}
-//Calcul des taxes
-function totalTaxesResultFct() {
-    totalTaxesResult= ((hourlyRate.value*hourQty.value) + (dailyRate.value*dayQty.value)+ (extrasRate.value*ExtraQty.value))/100 *taxes.value
-    totalTaxes.innerHTML=(totalTaxesResult.toFixed(2))+"€"
-}
-//Calcul du net
-function totalNetResultFct() {
-    totalGrossResult =((hourlyRate.value*hourQty.value) + (dailyRate.value*dayQty.value)+ (extrasRate.value*ExtraQty.value))
-    totalTaxesResult= ((hourlyRate.value*hourQty.value) + (dailyRate.value*dayQty.value)+ (extrasRate.value*ExtraQty.value))/100 *taxes.value
-    totalNet.innerHTML=((totalGrossResult.toFixed(2)-totalTaxesResult.toFixed(2)))+"€"
-}
-//Fonction qui synchronise toutes les autres
+//Selectionne tous les champs inputs
+let inputs = document.querySelectorAll("input")
+
+
+
 function totalResults(e) {
+    //déclarations des totaux
+let totalGrossResult = ((hourlyRate.value*hourQty.value) + (dailyRate.value*dayQty.value)+ (extrasRate.value*ExtraQty.value))
+let totalTaxesResult= ((hourlyRate.value*hourQty.value) + (dailyRate.value*dayQty.value)+ (extrasRate.value*ExtraQty.value))/100 *taxes.value
+let totalNetResult = totalGrossResult-totalTaxesResult
+
+    //Calcul du brut    
+        totalGross.innerHTML=(totalGrossResult.toFixed(2))+"€"
+    //Calcul des taxes
+        totalTaxes.innerHTML=(totalTaxesResult.toFixed(2))+"€"
+    //Calcul du net
+         totalNet.innerHTML= totalNetResult.toFixed(2)+"€"
+        
     e.preventDefault()
-    totalGrossResultFct()
-    totalTaxesResultFct()
-    totalNetResultFct()
+
+//Prevents user from entering negative value
+inputs.forEach(element => {
+    if (element.value < 0) {
+        element.value = 0
+    }})
 }
 
-let inputs = document.querySelectorAll("input")
+
 
 //Detecte les changements de valeur et met à jour les totaux
 inputs.forEach(element => {
     element.addEventListener("keyup", totalResults),
     element.addEventListener("change", totalResults)
 })
+
 document
     .getElementById("taxes")
     .addEventListener("keyup", totalResults),
     addEventListener("change", totalResults)
+
+//Bouton calculer
+document
+    .getElementById("calculate")
+    .addEventListener("click", totalResults)
